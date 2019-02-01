@@ -1,0 +1,10 @@
+#footer {
+  background-color: lightblue;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#footer p {
+  text-align: right;
+}

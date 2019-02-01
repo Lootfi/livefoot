@@ -4,7 +4,8 @@ include './includes/classes/Route.php';
 include 'index.php';
 
 Route::set('',function() {
-    Controller::CreateView('Root');
+    Index::CreateView('Index');
+    Index::test();
 });
 
 Route::set('teams',function() {

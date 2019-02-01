@@ -1,6 +1,7 @@
 <?php
+include "./includes/classes/Database.php";
+class Controller extends Database {
 
-class Controller {
     public static function CreateView($viewName){
         require_once('./includes/Views/'.$viewName.'.php');
     }

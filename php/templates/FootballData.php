@@ -129,7 +129,14 @@ class FootballData {
     }
 
     public function getCLmatches(){
-        $resource = 'competitions/PL/matches';
+        $resource = 'competitions/CL/matches';
+        $response = file_get_contents($this->baseUri . $resource, false,
+                                       stream_context_create($this->reqPrefs));
+        return json_decode($response);
+                                    }
+
+    public function getCLteams(){
+        $resource = 'competitions/CL/teams';
         $response = file_get_contents($this->baseUri . $resource, false,
                                        stream_context_create($this->reqPrefs));
         return json_decode($response);

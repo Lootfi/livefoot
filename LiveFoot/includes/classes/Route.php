@@ -9,6 +9,7 @@ class Route {
         if($_SERVER['REQUEST_URI'] == BASEDIR.$route){
             $function();
         }
+        // $function();
     }
 }
 

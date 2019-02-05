@@ -1,6 +1,6 @@
 <?php
-include './_Globals.php';
-include './includes/classes/Route.php';
+// include './_Globals.php';
+// include './includes/classes/Route.php';
 include 'index.php';
 
 Route::set('',function() {
@@ -16,4 +16,7 @@ Route::set('contact-us',function() {
     ContactUs::CreateView('ContactUs');
 });
 
+Route::set('register',function(){
+    Register::CreateView('Register');
+})
 ?>

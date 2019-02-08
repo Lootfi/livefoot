@@ -9,7 +9,7 @@ class Index extends Controller{
         return $x;
     }
     public static function addUser($username,$email,$password){
-        self::query('INSERT INTO users VALUES (null,:Username,:Password,:Email)',array(':Username'=>$username,':Password'=>$password,':Email'=>$email));
+        self::query('INSERT INTO users VALUES (null,:Username,:Password,:Email)',array(':Username'=>$username,':Password'=> password_hash($password,PASSWORD_BCRYPT),':Email'=>$email));
 }
 }
 

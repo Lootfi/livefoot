@@ -5,7 +5,6 @@ include 'index.php';
 
 Route::set('',function() {
     Index::CreateView('Index');
-    Index::test();
 });
 
 Route::set('teams',function() {

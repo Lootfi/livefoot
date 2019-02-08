@@ -26,7 +26,7 @@ class Database {
     public static function query($query,$params = array()){
         $stm = self::connect()->prepare($query);
         $stm->execute($params);
-        if(explode(' ',$query[0] == 'SELECT')){
+        if(explode(' ',$query)[0] == 'SELECT'){
             $data = $stm->fetchAll();
             return $data;
         }

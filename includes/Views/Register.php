@@ -8,7 +8,7 @@ if(isset($_POST['setter'])){
     $email = $_POST['email'];
     if(!Index::userExists($username)){
         if(!(strlen($username) < 4 or strlen($username) >= 32) && preg_match('/[a-zA-Z0-9_]+/',$username)) {
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) && !Index::emailExists($email)){
                 if(!(strlen($password) < 6 or strlen($password) > 50)){
                     Index::addUser($username,$email,$password);
                     echo '<h2>Welcome '. $username.' !</h2>';
@@ -16,7 +16,11 @@ if(isset($_POST['setter'])){
                     echo '<br><b>Invalid Password</b>';
                 }
             } else {
-                echo '<br><b>Invalid Email</b>';
+                if(Index::emailExists($email)){
+                    echo '<br><b>Email in use</b>';
+                } else {
+                    echo '<br><b>Invalid Email</b>';
+                }
             }
         } else {
             echo '<br><b>Invalid Username</b>';
@@ -26,8 +30,8 @@ if(isset($_POST['setter'])){
     }
 }
 ?>
-<h1 class="text-white">Register Form</h1>
-    <div class="w-full max-w-xs">
+<h1 class="text-white">Signup Form</h1>
+    <div class="w-full max-w-xs align-middle">
         <form action="" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">
                 <label for="username">
@@ -50,10 +54,5 @@ if(isset($_POST['setter'])){
             <input type="submit" value="Sign Up" name="setter" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         </form>
     </div>
-<?= isset($username) ? 'Username : '. $username : '' ?>
-<br>
-<?= isset($password) ? 'Password : '. $password : '' ?>
-<br>
-<?= isset($email) ? 'Email : '. $email : '' ?>
 
 <?php include 'Footer.php'; ?>

@@ -17,5 +17,9 @@ Route::set('contact-us',function() {
 
 Route::set('register',function(){
     Register::CreateView('Register');
-})
+});
+
+Route::set('login',function(){
+    Login::CreateView('Login');
+});
 ?>

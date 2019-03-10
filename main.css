@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#header {
+  background-color: #6282f5;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#header a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 5px solid #6282f5;
+  font-size: 18px;
+  padding: 15px 0;
+}
+
+#header a:hover{
+  border-bottom: 5px solid red;
+}

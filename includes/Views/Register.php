@@ -30,7 +30,7 @@ if(isset($_POST['setter'])){
     }
 }
 ?>
-<h1 class="text-white">Signup Form</h1>
+<h1 class="text-white">Signup Foorm</h1>
     <div class="w-full max-w-xs align-middle">
         <form action="" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">

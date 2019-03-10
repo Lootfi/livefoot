@@ -1,3 +1,5 @@
 RewriteEngine On
-#RewriteRule ^([^/]*)/([^/]*)$ index.php?url=$1&username=$2 [L]
-RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
+# RewriteRule ^(teams)/([0-9]+)/ index.php?url=$1&url2=$2 [QSA]
+# RewriteRule ^([^/]*)/ index.php?url=$1 [QSA]
+RewriteRule ^([^/]+)/ index.php?url=$1 [L,QSA]
+# RewriteRule ^(teams)/([0-9]+) index.php?url=$1&team=$2 [QSA,L]

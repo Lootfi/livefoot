@@ -14,7 +14,7 @@ class Database {
     // echo '<br>';
     // echo var_dump($data);
     public static $host = "localhost";
-    public static $dbName = "livefoot";
+    public static $dbName = "livefoot2";
     public static $username = "root";
     public static $password = ""; 
     
@@ -31,7 +31,6 @@ class Database {
             return $data;
         }
     }
-
 
 
 }

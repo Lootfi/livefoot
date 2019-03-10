@@ -7,19 +7,27 @@ Route::set('',function() {
     Index::CreateView('Index');
 });
 
-Route::set('teams',function() {
+Route::set('teams/',function() {
     Teams::CreateView('Teams');
 });
 
-Route::set('contact-us',function() {
+// Route::set('teams/2/',function() {
+//     Teams::CreateView('Team');
+// });
+
+Route::set('contact-us/',function() {
     ContactUs::CreateView('ContactUs');
 });
 
-Route::set('register',function(){
+Route::set('register/',function(){
     Register::CreateView('Register');
 });
 
-Route::set('login',function(){
+Route::set('login/',function(){
     Login::CreateView('Login');
+});
+
+Route::set('api-test/',function(){
+    Login::CreateView('ApiTest');
 });
 ?>
